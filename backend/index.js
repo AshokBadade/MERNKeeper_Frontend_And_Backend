@@ -67,7 +67,7 @@ app.get("/get",cors(corsOptions),async(req,res) => {
   const id = req.params.id ;
   console.log(id)
   try{
-    const docs = await Products.findOneAndUpdate({title:id}, req.body ,{new:true}) ;
+    const docs = await Notes.findOneAndUpdate({title:id}, req.body ,{new:true}) ;
     res.json(docs) ;
   }catch(err){ res.status(400).json(err) }
  })
